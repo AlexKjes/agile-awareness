@@ -6,7 +6,7 @@ import { HowAgileIsYourTeam } from "./pages/HowAgileIsYourTeam";
 
 function App() {
   return (
-    <main>
+    <main className="size-full">
       
       <Router>
         <Routes>

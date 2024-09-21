@@ -1,12 +1,9 @@
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel";
+} from "../components/ui/carousel";
 import { useEffect, useState } from "react";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Label } from "../components/ui/label";
@@ -21,7 +18,7 @@ export const HowAgileIsYourTeam = () => {
 
   const radioChange = (value: String) => {
     sum += +value;
-    setTimeout(() => api.scrollNext(), 100);
+    setTimeout(() => api?.scrollNext(), 100);
   };
 
   useEffect(() => {

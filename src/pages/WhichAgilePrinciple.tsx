@@ -5,8 +5,6 @@ import {
   CarouselItem,
   CarouselApi,
 } from "../components/ui/carousel";
-import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
-import { Label } from "../components/ui/label";
 import {
   AgilePrinciplesQuestions,
   AgilePrinciplesResults,

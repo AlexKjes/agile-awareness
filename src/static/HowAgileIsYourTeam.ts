@@ -13,6 +13,27 @@ export const createQuestion = (
   };
 };
 
+export const questionImages = [
+  "./brace-yourself-deployment.png",
+  "./changes.png",
+  "./bad_design.png",
+  "./smoke_screen.png",
+  "./no_docs.png",
+  "./adults.png",
+  "./britney_stress.png",
+  "./review.png",
+  "./pair-programming.png",
+  "./feedback.png"
+]
+
+export const answerImages = [
+  "./agile_burn.png",
+  "./agile_waterfall.png",
+  "./burndown.png",
+  "./backlog.png"
+]
+
+
 export const Questions = [
   createQuestion(
     "How frequently do you deliver working increments of the product to stakeholders?",
@@ -67,8 +88,8 @@ export const Questions = [
 ];
 
 export const Results = [
-  "Highly Agile Project – Your project embodies most principles of agility, with excellent collaboration, adaptability, and frequent delivery of working software.",
-  "Moderately Agile Project – Your project is fairly agile but could improve in certain areas, like embracing change or stakeholder collaboration.",
-  "Low Agility – Your project adopts some agile practices but struggles with key elements such as frequent delivery, feedback loops, and adaptability.",
   "Minimal Agility – Your project follows traditional methodologies or lacks agility in critical areas like collaboration, adaptability, and iterative progress.",
+  "Low Agility – Your project adopts some agile practices but struggles with key elements such as frequent delivery, feedback loops, and adaptability.",
+  "Moderately Agile Project – Your project is fairly agile but could improve in certain areas, like embracing change or stakeholder collaboration.",
+  "Highly Agile Project – Your project embodies most principles of agility, with excellent collaboration, adaptability, and frequent delivery of working software.",
 ];

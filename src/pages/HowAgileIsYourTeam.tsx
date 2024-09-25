@@ -8,16 +8,17 @@ import { useEffect, useState } from "react";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Label } from "../components/ui/label";
 import { Questions, Results } from "../static/HowAgileIsYourTeam";
+import { AnswerGroup } from "../components/AnswerGroup";
 
 export const HowAgileIsYourTeam = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [_, setCount] = useState(0);
+  const [sum, setSum] = useState(0);
 
-  var sum: number = 0;
-
-  const radioChange = (value: String) => {
-    sum += +value;
+  const radioChange = (value: string) => {
+    setSum(Number.parseInt(value) + sum);
+    console.log(sum)
     setTimeout(() => api?.scrollNext(), 100);
   };
 
@@ -49,30 +50,11 @@ export const HowAgileIsYourTeam = () => {
                   {question.question}
                 </span>
                 <br />
-                <div className="mx-auto width-full pt-10">
-                  <RadioGroup onValueChange={(event) => radioChange(event)}>
-                    <div className="flex flex-wrap">
-                      <div className="flex items-center space-x-2 w-32">
-                        {question.lowAnswer}
-                      </div>
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <div className="flex flex-auto items-center space-x-2 w-16 justify-center">
-                          <RadioGroupItem
-                            value={i + 1 + ""}
-                            id={"option-" + i}
-                            onChange={(event) =>
-                              radioChange(event.currentTarget.value)
-                            }
-                          />
-                          <Label htmlFor={"option-" + i}>{i + 1}</Label>
-                        </div>
-                      ))}
-                      <div className="flex items-center space-x-2 w-32">
-                        {question.lowAnswer}
-                      </div>
-                    </div>
-                  </RadioGroup>
-                </div>
+                <AnswerGroup 
+                  question={question}
+                  index={index}
+                  onValueChange={radioChange}
+                />
               </CarouselItem>
             ))}
             <CarouselItem>

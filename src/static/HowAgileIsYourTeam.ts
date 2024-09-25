@@ -1,8 +1,5 @@
-export interface Question {
-  question: String;
-  lowAnswer: String;
-  highAnswer: String;
-}
+import { Question } from "./common";
+
 
 export const createQuestion = (
   questionText: String,
@@ -13,7 +10,7 @@ export const createQuestion = (
     question: questionText,
     lowAnswer: lowAnswer,
     highAnswer: highAnswer,
-  } as Question;
+  };
 };
 
 export const Questions = [

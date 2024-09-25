@@ -13,6 +13,7 @@ import {
 } from "../static/WhichAgilePrincipleAreYou";
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
+import { AnswerGroup } from "../components/AnswerGroup";
 
 export const WhichAgilePrincipleAreYou: React.FC = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -104,36 +105,11 @@ export const WhichAgilePrincipleAreYou: React.FC = () => {
                   <span className="text-2xl font-semibold">
                     {question.question}
                   </span>
-                  <div className="mt-6">
-                    <RadioGroup
-                      onValueChange={(value) =>
-                        handleRadioChange(value, question.principle)
-                      }
-                    >
-                      <div className="flex items-center space-x-4 justify-center align-center">
-                        <Label className="w-1/3 text-right">
-                          {question.lowAnswer}
-                        </Label>
-                        <div className="flex space-x-2">
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <div key={i} className="flex flex-col items-center">
-                              <RadioGroupItem
-                                value={(i + 1).toString()}
-                                id={`option-${index}-${i}`}
-                                className="radio-button"
-                              />
-                              <Label htmlFor={`option-${index}-${i}`}>
-                                {i + 1}
-                              </Label>
-                            </div>
-                          ))}
-                        </div>
-                        <Label className="w-1/3 text-left">
-                          {question.highAnswer}
-                        </Label>
-                      </div>
-                    </RadioGroup>
-                  </div>
+                  <AnswerGroup
+                    question={question}
+                    index={index}
+                    onValueChange={value => handleRadioChange(value, question.principle)}
+                  />
                 </div>
               </CarouselItem>
             ))}

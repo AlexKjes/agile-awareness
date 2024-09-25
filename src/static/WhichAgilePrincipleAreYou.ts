@@ -1,4 +1,6 @@
-export interface Question {
+import { Question } from "./common";
+
+export interface PrincipleQuestion extends Question {
   question: string;
   lowAnswer: string;
   highAnswer: string;
@@ -10,7 +12,7 @@ export const createQuestion = (
   lowAnswer: string,
   highAnswer: string,
   principle: string,
-): Question => {
+): PrincipleQuestion => {
   return {
     question: questionText,
     lowAnswer: lowAnswer,
@@ -19,7 +21,7 @@ export const createQuestion = (
   };
 };
 
-export const AgilePrinciplesQuestions: Question[] = [
+export const AgilePrinciplesQuestions: PrincipleQuestion[] = [
   createQuestion(
     "I prioritize delivering valuable results to customers as early and consistently as possible.",
     "I rarely focus on early and continuous delivery to customers.",
